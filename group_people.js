@@ -41,8 +41,15 @@ const people = [{
 }];
 
 
+/**
+ * listByGender
+ * @description : Function accept gender params with value of 'F', 'f', 'm', 'M'
+ * @param {string} gender 
+ * @return {Array} : list of people
+ *     eg: [{name: 'test', department: 'IT', gender: 'M'}]
+ */
 function listByGender(gender) {
-    // lists of gender
+    // Initiate variables
     let gender_list_by_gender = [];
 
     // Check if param gender value is equal to define values
@@ -64,4 +71,35 @@ function listByGender(gender) {
     return gender_list_by_gender
 }
 
-console.log(listByGender('k'));
+console.log(listByGender('M'));
+
+
+function groupByDepartment() {
+     // Initiate variables
+    let group_by_department = {};
+    let department = '';
+
+    // For every people
+    for (let i=0; i <= people.length; i++) {
+
+        // Check undefined 
+        if (typeof people[i] !== 'undefined') {
+            // Assign value of department
+            department = people[i]['department']
+
+            // Does department is in the list
+            if (!group_by_department[department]) {
+                // Set department to list
+                group_by_department[department] = [];
+            } 
+
+            // Push list of people
+            group_by_department[department].push(people[i]);
+        }
+    }
+
+    // Return result
+    return group_by_department;
+}
+
+console.log(groupByDepartment());
