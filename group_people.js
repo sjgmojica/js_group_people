@@ -74,6 +74,12 @@ function listByGender(gender) {
 console.log(listByGender('M'));
 
 
+/**
+ * groupByDepartment
+ * @description : Function to re group list of people by department
+ * @return {Array} : list of people
+ *     eg: {'IT' : [{name: 'test', department: 'IT', gender: 'M'}]}
+ */
 function groupByDepartment() {
      // Initiate variables
     let group_by_department = {};
